@@ -1,9 +1,28 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
+
+const days = frontmatter.finished ? Math.floor((Date.parse(frontmatter.finished) - Date.parse(frontmatter.started)) / 86400000) : 'NONE';
+const pagesPerDay = days ? Math.floor(frontmatter.pages / days) : 'None';
+
 ---
 <BaseLayout pageTitle={frontmatter.title}>
-    <h1>{frontmatter.title}</h1>
-    <p>Written by {frontmatter.author}</p>
-    <slot />
+    <div class="grid grid-cols-2 gap-4">
+        <div>
+           <img class="h-full w-3/4"src={frontmatter.image.url}>
+        </div>
+        <div>
+            <h1>{frontmatter.title}</h1>
+            <p>Written by {frontmatter.author}</p>
+            <ul>
+                <li>started on: {frontmatter.started}</li>
+                <li>{frontmatter.finished ? (`finished: ${frontmatter.finished}`) : ("finished: not yet")}</li>
+                <li>pages: {frontmatter.pages}</li>
+                <li>Rating: {frontmatter.rating}</li>
+                <li>DAYS: {days}</li>
+                <li>Pages per day: {pagesPerDay}</li>
+            </ul>
+            <slot />
+        </div>
+    </div>
 </BaseLayout>

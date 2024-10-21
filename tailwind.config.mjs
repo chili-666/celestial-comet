@@ -7,7 +7,11 @@ export default {
 				'dark-olive': '#4C4B16',
 				'olive': '#898121',
 				'sand': '#E6C767',
-				'salmon': '#F87A53'
+				'salmon': '#F87A53',
+				'hot-pink': '#FF69B4',
+				'dark-purple': '#1F1A38',
+				'ghost': '#F4F4F9',
+				'dark-grey': '#717568'
 			},
 			fontFamily: {
 				karla: ['Karla', 'sans-serif'],

@@ -1,13 +1,17 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
-title: 'My First Blog Post'
-pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
-author: 'Astro Learner'
+layout: ../../layouts/BookLayout.astro
+title: 'Guns of Tanith'
+started: 2024-10-20
+finished: 2024-10-28
+reading: true
+rating: 0
+pages: 416
+description: ''
+author: 'Dan Abnett'
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+    url: '/public/images/books/the-guns-of-tanith.jpg'
+    alt: 'Guns of Tanith'
+tags: ["wh40k", "scifi", "pulp"]
 ---
 # My First Blog Post
 

@@ -4,7 +4,7 @@ const { link, label, severity } = Astro.props;
 
 // Define the severity classes for different styles
 const severityClasses = {
-    primary: 'bg-dark-olive hover:bg-olive text-white hover:text-salmon',
+    primary: 'rounded-lg ml-2 mr-2 bg-dark-purple border-solid border-2 border-dark-grey hover:bg-hot-pink text-white hover:text-dark-purple',
     secondary: 'bg-sand hover:bg-dark-olive text-olive hover:text-white',
     danger: 'bg-salmon hover:bg-salmon text-dark-olive hover:text-white',
 
@@ -13,8 +13,8 @@ const severityClasses = {
 // Get the class for the current severity or default to 'primary'
 const buttonClass = severityClasses[severity] || severityClasses.primary;
 ---
-<a href={link} >
-    <button class={`px-4 py-2 w-full ${buttonClass}`}>
+<a href={link} class={`px-4 py-2 w-full ${buttonClass}`}>
+    <button>
         {label}
     </button>
 </a>

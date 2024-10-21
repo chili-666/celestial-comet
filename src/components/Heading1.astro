@@ -2,20 +2,10 @@
 const { title } = Astro.props;
 ---
 
-<div class="underline-brush">
-    <h1 class="font-klara font-bold text-3xl lg:text-6xl text-sand p-9 w-full">{title}</h1>
-</div>
+
+    <h1 class="heading-1 font-klara font-bold text-3xl lg:text-6xl text-hot-pink p-2 border-solid border-bottom-2 border-dark-purple">{title}</h1>
+
 
 <style>
-    .underline-brush {
-        background-image: url('../images/brush-dark-olive.svg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom -85px left -35px;
-        width: 100%;
-    }
 
-    .underline-brush h1 {
-        text-shadow: 1px 1px 1px black;
-    }
 </style>
