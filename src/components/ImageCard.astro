@@ -1,0 +1,16 @@
+---
+// Card.astro
+const { title, description, imageSrc } = Astro.props;
+import Tag from "./Tag.astro"
+---
+
+<div class="w-1/4 flex flex-col bg-white drop-shadow-2xl hover:drop-shadow-md rounded-lg overflow-hidden h-full">
+    <div class="flex-1 relative">
+        <img src={imageSrc} alt={title} class="w-full h-full object-cover" />
+    </div>
+    <div class="p-4">
+        <Tag tag="TEST" />
+        <h2 class="text-xl font-semibold">{title}</h2>
+        <p class="mt-2 text-gray-600">{description}</p>
+    </div>
+</div>

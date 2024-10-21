@@ -1,0 +1,20 @@
+---
+// Button.astro
+const { link, label, severity } = Astro.props;
+
+// Define the severity classes for different styles
+const severityClasses = {
+    primary: 'bg-olive hover:bg-dark-olive text-white hover:text-salmon',
+    secondary: 'bg-sand hover:bg-dark-olive text-olive hover:text-white',
+    danger: 'bg-salmon hover:bg-salmon text-dark-olive hover:text-white',
+
+};
+
+// Get the class for the current severity or default to 'primary'
+const buttonClass = severityClasses[severity] || severityClasses.primary;
+---
+<a href={link} >
+    <button class={`px-4 py-2 w-full ${buttonClass}`}>
+        {label}
+    </button>
+</a>
