@@ -1,6 +1,9 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
+import Heading2 from "../components/Heading2.astro"
+import Tag from "../components/Tag.astro"
+import Tags from "../components/Tag.astro";
 
 const days = frontmatter.finished ? Math.floor((Date.parse(frontmatter.finished) - Date.parse(frontmatter.started)) / 86400000) : 'NONE';
 const pagesPerDay = days ? Math.floor(frontmatter.pages / days) : 'None';
@@ -11,10 +14,9 @@ const pagesPerDay = days ? Math.floor(frontmatter.pages / days) : 'None';
         <div>
            <img class="h-full w-3/4"src={frontmatter.image.url}>
         </div>
-        <div>
-            <h1>{frontmatter.title}</h1>
-            <p>Written by {frontmatter.author}</p>
+        <div class="rounded shadow-xl bg-ghost p-6">
             <ul>
+                <li>written by {frontmatter.author}</li>
                 <li>started on: {frontmatter.started}</li>
                 <li>{frontmatter.finished ? (`finished: ${frontmatter.finished}`) : ("finished: not yet")}</li>
                 <li>pages: {frontmatter.pages}</li>
@@ -22,7 +24,14 @@ const pagesPerDay = days ? Math.floor(frontmatter.pages / days) : 'None';
                 <li>DAYS: {days}</li>
                 <li>Pages per day: {pagesPerDay}</li>
             </ul>
+            <Heading2 title="Notes:" />
+            <div class="p-6 bg-white rounded">
             <slot />
+                <div class="p-3 flex flex-row flex-wrap gap-2">
+                    {frontmatter.tags.map((tag) => <Tags tag={tag} link=`/books/tags/${tag}` />)}
+                </div>
+            </div>
         </div>
+
     </div>
 </BaseLayout>

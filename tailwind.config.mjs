@@ -17,6 +17,9 @@ export default {
 				karla: ['Karla', 'sans-serif'],
 				inconsolata: ['Inconsolata', 'sans-serif'],
 			},
+			fontSize: {
+				'h2': '2rem', // You can change '2rem' to whatever size you want
+			},
 		},
 	},
 	plugins: [],

@@ -1,21 +1,29 @@
+/* Custom Fonts */
 @font-face {
     font-family: 'Karla';
     src: url('/fonts/Karla.ttf') format('truetype');
-    font-weight: 1 999; /* Variable font supports a range of weights */
+    font-weight: 400; /* Adjust based on the font file's actual supported weights */
     font-style: normal;
     font-display: swap; /* Optional: improves performance */
-    font-variation-settings: 'wght' 400; /* Default weight */
 }
 
 @font-face {
     font-family: 'Inconsolata';
     src: url('/fonts/Inconsolata.ttf') format('truetype');
-    font-weight: 1 999; /* Variable font supports a range of weights */
+    font-weight: 400; /* Adjust based on the font file's actual supported weights */
     font-style: normal;
     font-display: swap; /* Optional: improves performance */
-    font-variation-settings: 'wght' 400; /* Default weight */
 }
 
+/* CSS Variables */
+:root {
+    --hot-pink: #FF69B4;
+    --dark-purple: #1F1A38;
+    --ghost: #F4F4F9;
+    --dark-grey: #717568;
+}
+
+/* Dark Mode */
 html.dark {
     background-color: #000;
     color: #fff;
@@ -23,4 +31,66 @@ html.dark {
 
 .dark .nav-links a {
     color: #fff;
+}
+
+/* Styling for h2 */
+h1 {
+    font-family: 'Karla', sans-serif; /* Use your custom font */
+    font-size: 3rem;
+    color: var(--hot-pink);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px var(--dark-purple);
+}
+
+
+/* Styling for h2 */
+h2 {
+    font-family: 'Karla', sans-serif; /* Use your custom font */
+    font-size: 2rem;
+    color: var(--dark-purple);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px var(--hot-pink);
+}
+
+h3 {
+    font-family: 'Karla', sans-serif; /* Use your custom font */
+    font-size: 1.5rem;
+    color: var(--dark-purple);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-family: 'Karla', sans-serif; /* Use your custom font */
+    font-size: 1rem;
+    color: var(--dark-purple);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+ol {
+    list-style-type: decimal-leading-zero ;
+  }
+
+blockquote {
+    box-shadow: inset 0 0 10px var(--dark-grey);
+    background: var(--ghost);
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+    color: var(--dark-grey);
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+blockquote p {
+    display: inline;
 }

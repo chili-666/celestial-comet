@@ -1,4 +1,6 @@
 ---
 const { tag, link } = Astro.props;
 ---
-<button class="text-xs rounded-full bg-hot-pink hover:bg-dark-purple text-dark-purple hover:text-ghost py-0.5 px-2">{tag}</button>
+<a href={link}>
+    <button class="text-xs rounded-full bg-hot-pink hover:bg-dark-purple text-dark-purple hover:text-ghost py-0.5 px-2">{tag}</button>
+</a>

@@ -1,15 +1,45 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import BlogPost from '../components/BlogPost.astro';
-import ImageCard from '../components/ImageCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
+
 const allPosts = await Astro.glob('./books/*.md');
 const pageTitle = "Books I have read";
+const count = allPosts.length -1;
+
+let totalPages = 0;
+allPosts.forEach((post) => {
+	if (post.frontmatter.title) {
+		totalPages += post.frontmatter.pages;
+	}
+});
 ---
+
 <BaseLayout pageTitle={pageTitle}>
 	<p>This is where I will gather all the books I have read since 2024-10-20.</p>
-	<ul>
-		// {allPosts.map((post) => <ImageCard link={post.url} imageSrc={post.frontmatter.image.url} title={post.frontmatter.title} />)}
-		{allPosts.map((post) => <Card link={post.url} imageSrc={post.frontmatter.image.url} title={post.frontmatter.title} description={post.frontmatter.description} tags={post.frontmatter.tags} />)}
-	</ul>
+	<p class="m-3 p-6 w-1/2 bg-hot-pink text-dark-purple font-bold rounded shadow-lg hover:shadow-2xl boder-solid border-1 border-dark-grey">
+		So far, I have read {count} books ({totalPages} pages) in
+		<span id="days"></span> days.
+	</p>
+
+	<div class="mt-6 p-6 flex flex-row flex-wrap">
+		{allPosts.map((post) => (
+			post.frontmatter.title && (
+				<Card
+					link={post.url}
+					imageSrc={post.frontmatter.image.url}
+					title={post.frontmatter.title}
+					description={post.frontmatter.description}
+					tags={post.frontmatter.tags}
+					rating={post.frontmatter.rating}
+					target="books"
+				/>
+			)
+		))}
+	</div>
 </BaseLayout>
+
+<script client:load>
+	const daysSinceStart = Math.floor((Date.now() - Date.parse("2024-10-20")) / 86400000);
+	document.getElementById('days').innerText = daysSinceStart;
+	console.log(daysSinceStart)
+</script>
