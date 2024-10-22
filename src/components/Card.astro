@@ -1,0 +1,74 @@
+---
+import Tags from "./Tag.astro";
+const { title, description, imageSrc, link, tags } = Astro.props;
+---
+<!-- component -->
+<!-- component -->
+
+    <div class="max-w-[720px] mx-auto">
+        <!-- Centering wrapper -->
+        <div class="relative flex flex-col text-gray-700 bg-ghost shadow-md bg-clip-border rounded-xl w-72 hover:shadow-xl border-solid border-2 boder-white">
+            <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-64">
+                <img
+                        src={imageSrc}
+                        alt="card-image" class="object-cover w-full h-full" />
+            </div>
+            <div class="p-6">
+                <p class="antialiased font-medium leading-relaxed flex flex-row flex-wrap gap-2">
+                    {tags.map((tag) => <Tags tag={tag} />)}
+                </p>
+                <div class="flex items-center justify-between mb-2">
+                    <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                        {title}
+                    </p>
+
+                </div>
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
+                    {description}
+                </p>
+            </div>
+            <div class="p-6 pt-0">
+                <a href={link}>
+                <button
+                        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+                        type="button">
+                    more ...
+                </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!--<div class="max-w-[720px] mx-auto">-->
+<!--    &lt;!&ndash; Centering wrapper &ndash;&gt;-->
+<!--    <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72 hover:shadow-xl">-->
+<!--        <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-64">-->
+<!--            <img-->
+<!--                    src={imageSrc}-->
+<!--                    alt="card-image" class="object-cover w-full h-full" />-->
+<!--        </div>-->
+<!--        <div class="p-1">-->
+<!--            <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">-->
+<!--                {tags.map((tag) => <Tags tag={tag} />)}-->
+<!--            </p>-->
+<!--        </div>-->
+<!--        <div class="p-3">-->
+<!--            <div class="flex items-center justify-between mb-2">-->
+<!--                <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">-->
+<!--                    {title}-->
+<!--                </p>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--        <div class="p-6 pt-0">-->
+<!--            <a href={link}>-->
+<!--                <button-->
+<!--                        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg shadow-gray-900/10 hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85] active:shadow-none block w-full bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"-->
+<!--                        type="button">-->
+<!--                    more ...-->
+<!--                </button>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
