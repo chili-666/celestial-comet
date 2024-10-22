@@ -8,7 +8,7 @@ const count = allPosts.length -1;
 
 let totalPages = 0;
 allPosts.forEach((post) => {
-	if (post.frontmatter.title) {
+	if (post.frontmatter.title && post.frontmatter) {
 		totalPages += post.frontmatter.pages;
 	}
 });

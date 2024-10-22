@@ -15,21 +15,25 @@ import Card from "../components/Card.astro";
     <div class="w-full hero-image h-96 bg-hot-pink rounded" style={`background-image: url(${frontmatter.image.url});`}>
     </div>
     <div class="w-3/4 mr-auto ml-auto ">
-        <div class="p-6 flex flex-row flex-wrap w-3/4">
-            <div>
+        <div class="p-6 flex flex-row flex-wrap">
+            <div class="w-3/4">
                 <slot />
             </div>
-            <div class="w-1/4 flex flex-row justify-end">
+            <div class="w-1/4">
+            <div class="flex flex-col justify-center items-center">
                 {allPosts.map((post) => (
                     post.frontmatter.title && (
                             <BlogPost
                                     url={post.url}
                                     title={post.frontmatter.title}
+                                    pubdate={post.frontmatter.pubDate}
+                                    tags={post.frontmatter.tags}
                             />
                     )
                 ))}
 
             </div>
+        </div>
         </div>
     </div>
 </BaseLayout>

@@ -18,14 +18,17 @@ const { pageTitle } = Astro.props;
 </head>
 <body>
 <Header />
-<Heading1 title={pageTitle} />
-<div class="ml-5 mr-5 min-h-svh">
-    <slot />
+<div class="pr-2 pl-6">
+    <Heading1 title={pageTitle} />
+    <div class="ml-5 mr-5 min-h-svh">
+        <slot />
+    </div>
+    <!--<Button link="https://example.com" label="Click Me" severity="primary" />-->
+    <!--<Button link="https://example.com" label="Delete" severity="danger" />-->
+    <!--<Button link="https://example.com" label="Learn More" severity="secondary" />-->
+    <!--<ImageCard imageSrc="https://placehold.co/400x600" title="TestCard" description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." />-->
 </div>
-<!--<Button link="https://example.com" label="Click Me" severity="primary" />-->
-<!--<Button link="https://example.com" label="Delete" severity="danger" />-->
-<!--<Button link="https://example.com" label="Learn More" severity="secondary" />-->
-<!--<ImageCard imageSrc="https://placehold.co/400x600" title="TestCard" description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." />-->
 <Footer />
+
 </body>
 </html>
